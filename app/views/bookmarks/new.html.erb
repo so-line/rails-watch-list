@@ -1,6 +1,10 @@
-<h3>New Review :</h3>
-<%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.input :comment %>
-  <%= f.association :movie, as: :select, prompt: "Choose a Movie" %>
-  <%= f.button :submit %>
-<% end %>
+<div class="p-5">
+  <h3>🤐 New Review :</h3>
+  <br>
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.input :comment %>
+    <%= f.association :movie, as: :select, prompt: "Choose a Movie" %>
+    <br>
+    <%= f.button :submit, class:"btn btn-outline-secondary" %>
+  <% end %>
+</div>

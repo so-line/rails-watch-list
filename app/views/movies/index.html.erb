@@ -1,18 +1,34 @@
 <div class="container p-5">
     <h1>🍿 All Movies</h1>
-  </div>
-  <br>
+</div>
+<br>
 <div class="container">
   <ul>
+  <div class="col-12 col-lg-6">
     <% @movies.each do |movie| %>
         <div class="card" style="width: 15rem;">
-          <img class="card-img-top" src="<%= movie["poster_url"]%>">
-          <div class="card-body">
-            <h5 class="card-title"> <%= movie["title"] %></h5>
-          </div>
+            <img class="card-img-top" src="<%= movie["poster_url"]%>">
+            <div class="card-body">
+              <h5 class="card-title"> <%= movie["title"] %></h5>
+            </div>
         <% end %>
         </div>
+  </div>
   </ul>
-  <br>
-  <p class="p-5"><%= link_to "All Lists", lists_path %><p>
+</div>
+
+<div class="container">
+<div class="row justify-content-between">
+          <div class="col-4">
+            <div class="card">
+            <% @movies.each do |movie| %>
+                <img class="card-img-top" src="<%= movie["poster_url"]%>">
+                <div class="card-body">
+                  <h5 class="card-title"> <%= movie["title"] %></h5>
+                </div>
+            <% end %>
+            </div>
+          </div>
+        </div>
+    <p class="p-5"><%= link_to "All Lists", lists_path %><p>
 </div>
