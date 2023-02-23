@@ -67,6 +67,7 @@ group :development do
 end
 
 gem 'autoprefixer-rails'
+gem 'faker'
 gem 'font-awesome-sass', '~> 6.1'
 gem 'rails-controller-testing', group: [:test]
 gem 'rspec-rails', group: [:test]

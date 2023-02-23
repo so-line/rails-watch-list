@@ -1,0 +1,27 @@
+<div class="banner">
+  <div class="container">
+    <h1>🍿 Movie Lists</h1>
+  </div>
+</div>
+<br>
+<div class="container align-items-center">
+  <div class="row">
+  <% @lists.each do |list| %>
+    <div class="col-12 col-lg-4">
+        <div class="card text-center text-black border-warning">
+          <div class="card photo" class="card-img-top">
+          <br>
+            <h4><%= list.name %></h4>
+            <div class="card-body">
+              <button type="button" class="btn btn-outline-warning btn-sm"><%= link_to "See", list  %></button>
+            </div>
+          </div>
+        </div>
+    </div>
+  <% end %>
+  </div>
+  <br>
+  <div class="align-items-center">
+  <p><%= link_to "New list", new_list_path %> - <%= link_to "All Movies", movies_path %><p>
+  </div>
+</div>

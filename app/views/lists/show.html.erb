@@ -1,0 +1,17 @@
+<div class="p-5">
+  <h3><strong><%= @list.name %></strong></h3>
+  <br>
+  <ul class="list-group">
+    <% @list.bookmarks.each do |bookmark| %>
+      <li class="list-group-item"><em>
+        <%= bookmark.comment %></em><br><strong><%= Movie.find(bookmark.movie_id).title%></strong>
+        <small><%= link_to "Delete", bookmark_path(bookmark),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></small>
+      </li>
+    <% end %>
+  </ul>
+
+  <br>
+  <small><%= link_to "New Bookmark", new_list_bookmark_path(@list) %> -
+  <%= link_to "Back to Lists", lists_path %></small>
+</div>
