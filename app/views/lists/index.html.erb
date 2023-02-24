@@ -1,4 +1,4 @@
-<div class="banner">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dp4lgffrz/image/upload/v1677248928/cinema-seats.jpg);">
   <div class="container">
     <h1>Movie Lists</h1>
   </div>
@@ -8,7 +8,7 @@
   <div class="row">
   <% @lists.each do |list| %>
     <div class="col-12 col-lg-4">
-        <div class="card text-center text-black border-warning">
+        <div class="card text-center text-black border-warning m-2">
           <div class="card photo" class="card-img-top">
           <br>
             <h4><%= list.name %></h4>
@@ -22,5 +22,3 @@
   </div>
   <br>
 </div>
-
-https://res.cloudinary.com/dp4lgffrz/image/upload/v1677248928/denise-jans-OaVJQZ-nFD0-unsplash_1_gmpojh.jpg
