@@ -1,19 +1,17 @@
 <div class="container p-5">
-    <h1>🍿 All Movies</h1>
+    <h1>👀 All Movies</h1>
 </div>
-<br>
 <div class="container">
-<div class="row justify-content-between">
-          <div class="col-4">
-            <div class="card">
-            <% @movies.each do |movie| %>
-                <img class="card-img-top" src="<%= movie["poster_url"]%>">
-                <div class="card-body">
-                  <h5 class="card-title"> <%= movie["title"] %></h5>
-                </div>
-            <% end %>
+<% @movies.each do |movie|%>
+    <div class="container">
+        <div class="card-product">
+            <img src="<%= movie["poster_url"]%>"/>
+            <div class="card-product-infos">
+              <h2><%=movie["title"]%></h2>
+              <p><%=movie["overview"]%><p>
+              <p class="rating">Viewer ratings : <strong><%=movie["rating"]%>/10<strong><p>
             </div>
-          </div>
         </div>
-    <p class="p-5"><%= link_to "All Lists", lists_path %><p>
+    </div>
+    <% end %>
 </div>

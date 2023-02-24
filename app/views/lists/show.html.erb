@@ -1,17 +1,22 @@
-<div class="p-5">
-  <h3>⭐️ <strong><%= @list.name %></strong></h3>
-  <br>
-  <ul class="list-group">
+<div class="container">
+  <div class="p-5">
+    <h3>⭐️ <strong><%= @list.name %></strong></h3>
+    <br>
     <% @list.bookmarks.each do |bookmark| %>
-      <li class="list-group-item"><em>
-        <%= bookmark.comment %></em><br><strong><%= Movie.find(bookmark.movie_id).title%></strong>
-        <small><%= link_to "Delete", bookmark_path(bookmark),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></small>
-      </li>
+    <div class="container">
+        <div class="card-product">
+            <img src="<%= Movie.find(bookmark.movie_id).poster_url%>"/>
+            <div class="card-product-infos">
+              <h2><%=Movie.find(bookmark.movie_id).title%></h2>
+              <strong><em><%=bookmark.comment%></em></strong> -
+              <small><em><%= link_to "Delete review", bookmark_path(bookmark),
+              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></em></small>
+            </div>
+        </div>
+    </div>
     <% end %>
-  </ul>
 
-  <br>
-  <small><%= link_to "New Bookmark", new_list_bookmark_path(@list) %> -
-  <%= link_to "Back to Lists", lists_path %></small>
+    <br>
+    <button class="btn btn-outline-warning btn-sm btn-lg btn-block"><%= link_to "New Bookmark", new_list_bookmark_path(@list)%></button>
+  </div>
 </div>

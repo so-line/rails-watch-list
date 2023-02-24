@@ -13,7 +13,7 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new(bookmark_params)
     @bookmark.list = @list
     @bookmark.save
-    redirect_to lists_path(@list)
+    redirect_to list_path(@list)
   end
 
   def destroy
